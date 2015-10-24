@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('home', {});
   this.route('auth', {});
   this.route('add-fill-up', {});
+  this.route('about', {});
 });
 
 export default Router;

@@ -1,9 +1,4 @@
-a:link {
-    text-decoration: none;
-    color: #6666FF;
-}
-
-a:visited {
+a:link, a:visited {
     text-decoration: none;
     color: #6666FF;
 }
@@ -25,5 +20,6 @@ html, body {
 
 li{
     display: inline;
+    padding-right: 20px;
     font-family: "sans-serif";
 }

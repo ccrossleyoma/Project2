@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('auth', {});
   this.route('add-fill-up', {});
   this.route('about', {});
+  this.route('register', {});
 });
 
 export default Router;

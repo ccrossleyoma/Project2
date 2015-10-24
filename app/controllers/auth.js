@@ -19,6 +19,18 @@ export default Ember.Controller.extend({
 			}
 
 		},
+		logout: function(){
+			//Log user out of application
+			console.log('logout')
+			var user = this.get('username');
+			if (user == "Colby"){
+				this.set('loggedIn', false);
+				this.transitionTo('auth');
+			}
+			else{
+				this.set('errorMsg', 'Logout failed!');
+			}
+		},
 		test: function(){
 			console.log('test')
 		}

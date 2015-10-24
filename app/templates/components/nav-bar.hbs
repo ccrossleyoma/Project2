@@ -19,8 +19,8 @@
 		</ul>
 		{{#if authControllerChild.loggedIn}}
 			<p class="navbar-text navbar-right">Signed in as:		{{authControllerChild.username}}
+			<button type="button" class="btn btn-default" {{action 'logout'}}>Logout</button>
 			</p>
-			<button {{action 'foo'}}>alert foo</button>
 		{{/if}}
 
     </div><!-- /.navbar-collapse -->

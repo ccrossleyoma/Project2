@@ -6,6 +6,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('home', {});
+  this.route('auth', {});
+  this.route('add-fill-up', {});
 });
 
 export default Router;

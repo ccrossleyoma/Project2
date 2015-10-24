@@ -1,0 +1,29 @@
+a:link {
+    text-decoration: none;
+    color: #6666FF;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #6666FF;
+}
+
+a:hover {
+    color: #5353CF;
+}
+
+.active {
+	font-weight: bold;
+}
+
+body {padding-top: 10px;}
+
+html, body {
+    margin: 20px;
+    font-family: "sans-serif";
+}
+
+li{
+    display: inline;
+    font-family: "sans-serif";
+}

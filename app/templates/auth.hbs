@@ -2,6 +2,7 @@
 	Hello {{username}}
 	<button type="button" class="btn btn-default" {{action 'logout'}}>Log out</button>
 {{else}} {{!Display login page}}
+	Please login to continue.
 	{{#if errorMsg}}
 		
 		<form class="form-inline">
@@ -39,3 +40,5 @@
 		</form>
 	{{/if}}
 {{/if}}
+
+<p>Don't have an account? Click here to register for a free account.</p>

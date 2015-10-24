@@ -1,17 +1,19 @@
 a:link, a:visited {
     text-decoration: none;
-    color: #6666FF;
+    color: #9C9C7F;
 }
 
 a:hover {
-    color: #5353CF;
+    color: #70705C;
 }
 
 .active {
 	font-weight: bold;
 }
 
-body {padding-top: 10px;}
+body {
+	padding-top: 10px;
+}
 
 html, body {
     margin: 20px;
@@ -22,4 +24,5 @@ li{
     display: inline;
     padding-right: 20px;
     font-family: "sans-serif";
+    border-bottom: 1px solid #DCDCDC;
 }

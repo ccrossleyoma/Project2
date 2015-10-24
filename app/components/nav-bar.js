@@ -6,7 +6,7 @@ export default Ember.Component.extend({
 		foo: function(){
 			var auth = this.get('authControllerChild')
 			auth.set('username', 'colby')
-			alert(auth.get('username'));
+			
 		}
 	}
 });

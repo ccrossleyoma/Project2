@@ -1,4 +1,20 @@
+{{!-- Display registration page --}}
 <h2>We're glad you're here!</h2>
 
 <p>Registering to use Fuel-Up is quick and easy. Simply enter the required information below and submit to get started using Fuel-Up.</p>
+
+<form class="form-inline">
+			<div class="form-group has-error">
+				{{input class="form-control" value=firstName action="register" placeholder="Enter first name"}}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=lastName action="register" placeholder="Enter last name"}}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=username action="register" placeholder="Enter username"}}
+			</div>
+			<button type="button" class="btn btn-default" {{action 'submit'}}>Submit</button>
+
+			{{errorMsg}}
+</form>
 {{outlet}}

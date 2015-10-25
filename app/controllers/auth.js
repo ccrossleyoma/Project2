@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
 	actions: {
 		login: function(){
 			//Check authentication here
-			console.log('login')
+			console.log('login');
 			var user = this.get('username');
 			if(user!="Colby"){
 				this.set('errorMsg', 'Login failed!');
@@ -21,7 +21,7 @@ export default Ember.Controller.extend({
 		},
 		logout: function(){
 			//Log user out of application
-			console.log('logout')
+			console.log('logout');
 			var user = this.get('username');
 			if (user == "Colby"){
 				this.set('loggedIn', false);
@@ -30,9 +30,6 @@ export default Ember.Controller.extend({
 			else{
 				this.set('errorMsg', 'Logout failed!');
 			}
-		},
-		test: function(){
-			console.log('test')
 		}
 	}
 });

@@ -1,4 +1,10 @@
 <h1>Welcome back!</h1>
 
+<p>Looks like you have the following cars in your garage:</p>
+
+{{#each car in user}}
+	{{car.year}}{{car.make}}{{car.model}}{{car.trim}}
+{{/each}}
+
 <p>With Fuel-Up, you can {{#link-to 'add-vehicle' tagName="li2"}}<a href="/add-vehicle">add a vehicle</a>{{/link-to}} or record {{#link-to 'add-fill-up' tagName="li2"}}<a href="/add-fill-up">new fill up</a>{{/link-to}}.</p>
 {{outlet}}

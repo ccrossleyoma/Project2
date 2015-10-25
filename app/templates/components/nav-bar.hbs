@@ -1,9 +1,8 @@
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        Fuel-Up
-      </a>
+      {{!-- <a class="navbar-brand" href="#">
+      </a> --}}
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
@@ -13,8 +12,14 @@
 			{{#link-to 'add-fill-up' tagName="li"}}
 				<a href="/add-fill-up">Add Fill-Up</a>
 			{{/link-to}}
+			{{#link-to 'add-vehicle' tagName="li"}}
+				<a href="/add-vehicle">Add Vehicle</a>
+			{{/link-to}}
 			{{#link-to 'about' tagName="li"}}
 				<a href="/about">About</a>
+			{{/link-to}}
+			{{#link-to 'register' tagName="li"}}
+				<a href="/register">Register</a>
 			{{/link-to}}
 		</ul>
 		{{#if authControllerChild.loggedIn}}

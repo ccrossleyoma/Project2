@@ -15,14 +15,22 @@ export default Ember.Route.extend({
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
 		if(!auth.loggedIn){
+			//If user is requesting about page, allow them to do so unauthenticated
 			if(transition.targetname == 'about'){
 				t.set('currentTransition', transition);
 				transition.abort();
 				console.log('User is unauthenicated and is requesting public about page, redirecting');
 				transitionToRoute('about');
 			}
-
-			else if(transition.targetName !== 'auth' && transition.targetName !== 'about'){
+			//If  user is trying to register, allow them to register without authentication
+			else if(transition.targetname == 'register'){
+				t.set('currentTransition', transition);
+				transition.abort();
+				console.log('User is unauthenicated and is requesting public about page, redirecting');
+				transitionToRoute('register');
+			}
+			//Otherwise, require auth
+			else if(transition.targetName !== 'auth' && transition.targetName !== 'about' && transition.targetName !== 'register'){
 				t.set('currentTransition', transition);
 				transition.abort();
 				console.log('User is unauthenicated, redirecting');

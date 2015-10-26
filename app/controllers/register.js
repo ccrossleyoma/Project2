@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	errorMsg: '',
+	/*errorMsg: '',
 	actions: {
 		register: function(){
 			//Check authentication here
@@ -30,5 +30,5 @@ export default Ember.Controller.extend({
 			}
 
 		},
-	}
+	}*/
 });

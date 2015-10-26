@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 			//Check authentication here
 			console.log('login');
 			var user = this.get('username');
-			if(user!="Colby"){
+			if(user!=="Colby"){
 				this.set('errorMsg', 'Login failed!');
 			}
 			else{
@@ -23,7 +23,7 @@ export default Ember.Controller.extend({
 			//Log user out of application
 			console.log('logout');
 			var user = this.get('username');
-			if (user == "Colby"){
+			if (user === "Colby"){
 				this.set('loggedIn', false);
 				this.transitionTo('auth');
 			}

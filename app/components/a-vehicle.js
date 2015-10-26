@@ -10,6 +10,6 @@ export default Ember.Component.extend({
       	trim: "XLE",
     	});
 
-		return this.store.find('vehicle')
+		return this.store.find('vehicle');
 	}
 });

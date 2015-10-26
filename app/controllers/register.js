@@ -5,12 +5,12 @@ export default Ember.Controller.extend({
 		register: function(){
 			//Check authentication here
 			console.log('User registering');
-			var user = this.get('username');
+			var user = auth.get('username');
 			if(user=="Colby"){
 				this.set('errorMsg', 'Registration failed!');
 			}
 			else{
-				this.set('loggedIn', true);
+				auth.set('loggedIn', true);
 				this.transitionTo('home');
 			}
 
@@ -19,13 +19,12 @@ export default Ember.Controller.extend({
 		submit: function(){
 			//User clicks submit button
 			console.log('New user registered');
-			var user = this.get('username');
-			if(user=="Colby"){
-				this.set('errorMsg', 'Registration failed!');
+			if(password != password2){
+				this.set('errorMsg', 'Passwords do not match!');
 			}
 			else{
-				this.set('loggedIn', true);
-				this.transitionTo('home');
+				auth.set('loggedIn', true);
+				auth.transitionTo('home');
 			}
 
 		},

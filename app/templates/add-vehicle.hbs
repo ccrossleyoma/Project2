@@ -1,19 +1,21 @@
 <h2>Adding a vehicle is easy</h2>
 <p>Simply enter the required information below and click submit.</p>
 
-{{!-- <form class="form-inline">
+<form class="form-inline">
 			<div class="form-group has-error">
-				<label class="control-label"><div class="alert alert-danger" style="padding: 5px; margin-bottom: 0px;" role="alert">{{errorMsg}}</div></label>
-				{{input class="form-control" value=firstName action="register" placeholder="First Name"}}
+				{{input class="form-control" value=year action="addCar" placeholder="Year" type="number" min="1900" max="2016"}}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=lastName action="register" placeholder="Last Name"}}
+				{{input class="form-control" value=make action="addCar" placeholder="Make" }}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=username action="register" placeholder="Username"}}
+				{{input class="form-control" value=model action="addCar" placeholder="Model" }}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=trim action="addCar" placeholder="Trim" }}
 			</div>
 			<button type="button" class="btn btn-default" {{action 'submit'}}>Submit</button>
 
 			{{errorMsg}}
-</form> --}}
+</form>
 {{outlet}}

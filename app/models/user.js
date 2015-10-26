@@ -5,5 +5,5 @@ export default DS.Model.extend({
   lastName: DS.attr('string'),
   username: DS.attr('string'),
   vehicle: DS.hasMany('vehicle'),
-  fillup: DS.hasMany('vehicle')
+  fillup: DS.hasMany('fillup')
 });

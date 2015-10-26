@@ -8,10 +8,13 @@
 				{{input class="form-control" value=firstName action="register" placeholder="Enter first name"}}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=lastName action="register" placeholder="Enter last name"}}
+				{{input class="form-control" value=username action="register" placeholder="Enter username"}}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=username action="register" placeholder="Enter username"}}
+				{{input class="form-control" value=password action="register" placeholder="Enter password" type="password"}}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=password2 action="register" placeholder="Confirm password" type="password"}}
 			</div>
 			<button type="button" class="btn btn-default" {{action 'submit'}}>Submit</button>
 

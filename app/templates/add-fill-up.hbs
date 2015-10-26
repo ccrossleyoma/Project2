@@ -1,1 +1,23 @@
+<h2>Full tank?</h2>
+<p>Record your results below and click submit.</p>
+<form class="form-inline">
+			<div class="form-group has-error">
+				{{input class="form-control" value=vehicle action="addFillup" placeholder="Vehicle" }}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=date action="addFillup" placeholder="Date" type="date"}}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=miles action="addFillup" placeholder="Miles" type="number" min = "0"}}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=gallons action="addFillup" placeholder="Gallons" type="number" min = "0"}}
+			</div>
+			<div class="form-group has-error">
+				{{input class="form-control" value=pricePerGallon action="addFillup" placeholder="Price per Gallon" type="number" min = "0"}}
+			</div>
+			<button type="button" class="btn btn-default" {{action 'submit'}}>Submit</button>
+
+			{{errorMsg}}
+</form>
 {{outlet}}

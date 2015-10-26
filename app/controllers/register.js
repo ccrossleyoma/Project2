@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+	errorMsg: '',
 	actions: {
 		register: function(){
 			//Check authentication here
@@ -19,6 +20,7 @@ export default Ember.Controller.extend({
 		submit: function(){
 			//User clicks submit button
 			console.log('New user registered');
+			//Check to see if password fields match
 			if(password != password2){
 				this.set('errorMsg', 'Passwords do not match!');
 			}

@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('about', {});
   this.route('register', {});
   this.route('add-vehicle', {});
+  this.route('compare', {});
+  this.route('archive', {});
 });
 
 export default Router;

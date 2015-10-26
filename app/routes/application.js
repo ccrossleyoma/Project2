@@ -14,6 +14,8 @@ export default Ember.Route.extend({
 		console.log("are you logged in "+ auth.get('loggedIn'));
 		var previoustrans = t.get('currentTransition');
 		console.log('User attempting to access: /'+transition.targetName);
+
+		//If user is not logged in
 		if(!auth.loggedIn){
 			//If user is requesting about page, allow them to do so unauthenticated
 			if(transition.targetname == 'about'){
@@ -37,20 +39,10 @@ export default Ember.Route.extend({
 				t.transitionTo('auth');
 			}
 		}
-
-		else{
-			if(transition.targetname == 'register'){
-			transition.abort();
-			console.log('User already logged in and trying to register again, redirecting home');
-			transitionToRoute('home');
-			alert("You have already registered!");
-			}
-
-			else if(previoustrans){
+		else if(previoustrans){
 			console.log('Redirecting back to original request: /'+previoustrans.targetName);
 			t.set('currentTransition', null);
 			previoustrans.retry();
-			}
 		}
 		
 	},

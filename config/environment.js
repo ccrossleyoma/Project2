@@ -6,7 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
-    contentSecurityPolicy: {
+    /*contentSecurityPolicy: {
     'default-src': "'none'",
     'script-src': "'self'",
     'font-src': "'self'",
@@ -14,7 +14,7 @@ module.exports = function(environment) {
     'img-src': "'self'",
     'style-src': "'self' 'localhost:4200'",
     'media-src': "'self' 'localhost:4200'"
-    },
+    },*/
 
     EmberENV: {
       FEATURES: {

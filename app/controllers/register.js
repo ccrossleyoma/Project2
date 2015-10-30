@@ -1,34 +1,38 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	/*errorMsg: '',
 	actions: {
-		register: function(){
-			//Check authentication here
-			console.log('User registering');
-			var user = auth.get('username');
-			if(user=="Colby"){
-				this.set('errorMsg', 'Registration failed!');
-			}
-			else{
-				auth.set('loggedIn', true);
-				this.transitionTo('home');
+		createUser() {
+			var name = this.get('firstName');
+			var uName = this.get('username');
+			var pass = this.get('password');
+			var pass2 = this.get('password2');
+
+			//Make sure all fields are filled, otherwise complain to the user
+			if((name === undefined) || (uName === undefined) || (pass === undefined) || (pass2 === undefined)) {
+				alert("Please complete all required fields!")
 			}
 
-		},
-
-		submit: function(){
-			//User clicks submit button
-			console.log('New user registered');
-			//Check to see if password fields match
-			if(password != password2){
-				this.set('errorMsg', 'Passwords do not match!');
-			}
-			else{
-				auth.set('loggedIn', true);
-				auth.transitionTo('home');
+			//If passwords don't match, complain to the user
+			else if(pass !== pass2) {
+				alert("Passwords do not match!");
 			}
 
-		},
-	}*/
+			//Go ahead and create new user account
+			else {
+				this.store.createRecord('user',{
+					firstName: '',
+					username: '',
+					password: '',
+				});
+
+				this.set('firstName', name);
+				this.set('username', uName);
+				this.set('password', pass);
+
+				console.log('new user registered');
+				alert(name + ", you have been registered!");
+			}
+		}
+	}
 });

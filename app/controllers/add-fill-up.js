@@ -13,9 +13,9 @@ export default Ember.Controller.extend({
 			var volume = this.get('gallons');
 			var price = this.get('pricePerGallon');
 			var car = this.get('vehicle');
-			var uName = 1;
+			/*var uName = 1;*/
 			var t = this;
-			var auth = t.controllerFor('auth');
+			/*var auth = t.controllerFor('auth');*/
 
 			//Make sure all fields are filled, otherwise complain to the user
 			if((fillUpDate === undefined) || (distance === undefined) || (volume === undefined) || (price === undefined) || (car === undefined) /*|| (uName === undefined)*/) {

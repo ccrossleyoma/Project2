@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 			var count = allFillups.get('length');
 			return allFillups.objectAt(count-1);
     },
-    mpg: function(){
+    /*mpg: function(){
 			var allFillups = this.store.all('fillup');
 			var count = allFillups.get('length');
 			var lastFillup = allFillups.objectAt(count-1);
@@ -22,7 +22,7 @@ export default Ember.Route.extend({
 			var lastMiles = lastFillup.miles;
 			var lastGallons = lastFillup.gallons;
 			var mpg = (lastMiles / lastGallons);
-    },
+    },*/
     
 	setupController: function(controller, model){
 		controller.set('allFillups', model);

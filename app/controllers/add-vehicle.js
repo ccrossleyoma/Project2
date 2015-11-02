@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
 			var brand = this.get('make');
 			var modelName = this.get('model');
 			var trimLevel = this.get('trim');
-			var uName = this.get('username');
+			/*var uName = this.get('username');*/
 
 			//Make sure all fields are filled, otherwise complain to the user
 			if((vehicleYear === undefined) || (brand === undefined) || (modelName === undefined) || (trimLevel === undefined) /*|| (uName === undefined)*/) {

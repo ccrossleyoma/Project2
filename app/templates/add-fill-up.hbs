@@ -2,12 +2,18 @@
 <p>Record your results below and click submit.</p>
 <form {{action 'addFillUp' identification on='submit'}}>
 			<div class="form-group has-error">
-			{{view Ember.Select
-			content=vehicles
-			optionValuePath="content.id"
-			optionLabelPath="content.year"}}
-				{{input class="form-control" value=vehicle placeholder="Vehicle" }}
+				{{input class="form-control" value=vehicle placeholder="Vehicle"}}
 			</div>
+			{{!-- <div>
+			{{view Ember.Select 
+			content=controller.vehiclesLookup 
+			selection=model.vehicle
+			optionValuePath="content.id" 
+			optionLabelPath="content.title" 
+			prompt="Choose vehicle" 
+			class="form-control" 
+			id="input-vehicle"}}
+			</div><div></div> --}}
 			<div class="form-group has-error">
 				{{input class="form-control" value=date placeholder="Date" type="date"}}
 			</div>

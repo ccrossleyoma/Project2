@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	actions: {
+		checkUser(){
+
+		},
+		
 		createUser() {
 			var uName = this.get('username');
 			var pass = this.get('password');

@@ -6,7 +6,7 @@ export default DS.Model.extend({
   model: DS.attr('string'),
   trim: DS.attr('string'),
   user: DS.belongsTo('user', {async: true}),
-  fillups: DS.hasMany('fillup', {async: true})
+  fillups: DS.hasMany('fillup')
 }).reopenClass({
 	FIXTURES: [
 	{

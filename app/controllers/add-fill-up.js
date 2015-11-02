@@ -1,14 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
 	actions: {
+		/*vehicles: function(){
+        return this.store.find('vehicle.make');
+    }.property(),
+*/
 		addFillUp() {
 			var fillUpDate = this.get('date');
 			var distance = this.get('miles');
 			var volume = this.get('gallons');
 			var price = this.get('pricePerGallon');
 			var car = this.get('vehicle');
-			var uName = this.get('user');
+			var uName = 1;
 			var t = this;
 			var auth = t.controllerFor('auth');
 
@@ -38,9 +43,7 @@ export default Ember.Controller.extend({
 					date: fillUpDate,
 					miles: distance,
 					gallons: volume,
-					pricePerGallon: price,
-					user: uName,
-					vehicle: 1
+					pricePerGallon: price
 				});
 
 				newFillUp.save();

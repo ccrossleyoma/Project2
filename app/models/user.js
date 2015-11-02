@@ -1,8 +1,16 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  firstName: DS.attr('string'),
   username: DS.attr('string'),
-  vehicle: DS.hasMany('vehicle'),
-  fillup: DS.hasMany('fillup')
+  password: DS.attr('string'),
+  vehicles: DS.hasMany('vehicle'),
+  fillups: DS.hasMany('fillup')
+}).reopenClass({
+	FIXTURES: [
+	{
+		id: 1,
+		username: 'Colby',
+		vehicles: [1],
+		fillups: [1,2]
+	}]
 });

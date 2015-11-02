@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	car: function(){
+	model: function(){
 		return this.store.find('vehicle');
+    },
+    
+	setupController: function(controller, model){
+		controller.set('vehicle', model);
 	}
-	
 });

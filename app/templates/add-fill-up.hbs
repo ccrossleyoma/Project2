@@ -1,23 +1,25 @@
 <h2>Full tank?</h2>
 <p>Record your results below and click submit.</p>
-<form class="form">
+<form {{action 'addFillUp' identification on='submit'}}>
 			<div class="form-group has-error">
-				{{input class="form-control" value=vehicle action="addFillup" placeholder="Vehicle" }}
+			{{view Ember.Select
+			content=vehicles
+			optionValuePath="content.id"
+			optionLabelPath="content.year"}}
+				{{input class="form-control" value=vehicle placeholder="Vehicle" }}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=date action="addFillup" placeholder="Date" type="date"}}
+				{{input class="form-control" value=date placeholder="Date" type="date"}}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=miles action="addFillup" placeholder="Miles" type="number" min = "0"}}
+				{{input class="form-control" value=miles placeholder="Miles" type="number" step="any" min = "0"}}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=gallons action="addFillup" placeholder="Gallons" type="number" min = "0"}}
+				{{input class="form-control" value=gallons placeholder="Gallons" type="number" step="any" min = "0"}}
 			</div>
 			<div class="form-group has-error">
-				{{input class="form-control" value=pricePerGallon action="addFillup" placeholder="Price per Gallon" type="number" min = "0"}}
+				{{input class="form-control" value=pricePerGallon placeholder="Price per Gallon" type="number" step="any" min = "0"}}
 			</div>
-			<button type="button" class="btn btn-default" {{action 'submit'}}>Submit</button>
-
-			{{errorMsg}}
+			<button type="submit" class="btn btn-default">Submit</button>
 </form>
 {{outlet}}

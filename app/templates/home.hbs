@@ -2,7 +2,11 @@
 
 <p>Looks like you have the following cars in your garage:</p>
 
-{{a-vehicle}}
+{{#each vehicle in vehicle}}
+		<h4>{{vehicle.year}} {{vehicle.make}} {{vehicle.model}} {{vehicle.trim}}</h4>
+		{{else}}
+  		<h4>Your garage is empty.</h4>
+{{/each}}
 
 <p>With Fuel-Up, you can {{#link-to 'add-vehicle' tagName="li2"}}<a href="/add-vehicle">add a vehicle</a>{{/link-to}} or record {{#link-to 'add-fill-up' tagName="li2"}}<a href="/add-fill-up">new fill up</a>{{/link-to}}.</p>
 {{outlet}}

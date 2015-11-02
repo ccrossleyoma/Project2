@@ -1,1 +1,26 @@
-{{outlet}}
+<h2>Here's what we remember...</h2>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Miles</th>
+        <th>Price per Gallon</th>
+        <th>Vehicle</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each fillup in fillup}}
+        <tr>
+          <td>{{fillup.id}}</td>
+          <td>{{fillup.date}}</td>
+          <td>{{fillup.miles}}</td>
+          <td>${{fillup.pricePerGallon}}</td>
+          <td>{{fillup.vehicle.year}} {{fillup.vehicle.make}} {{fillup.vehicle.model}} {{fillup.vehicle.trim}}</td>
+        </tr>
+        {{else}}
+  		<h4>No history to report.</h4>
+      {{/each}}
+    </tbody>
+    </table>

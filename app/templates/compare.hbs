@@ -1,20 +1,27 @@
 <h2>Let's see how you're doing...</h2>
-<table id="t01">
-  <tr>
-    <th>Your Average MPG</th>
-    <th>Community Average MPG</th>
-    <th>Your Last MPG</th>
-    <th>Community Last MPG</th>
-    <th>Your Best MPG</th>
-    <th>Community Best MPG</th>
-  </tr>
-  <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-</table>
+<table class="table table-striped">
+    <thead>
+      <tr>
+      <th>Your Average MPG</th>
+      <th>Community Average MPG</th>
+      <th>Your Last MPG</th>
+      <th>Community Last MPG</th>
+      <th>Your Best MPG</th>
+      <th>Community Best MPG</th>
+      </tr>
+      </thead>
+      <tbody>
+      {{#each fillup in fillup}}
+        <tr>
+          <td>{{fillup.id}}</td>
+          <td>{{fillup.date}}</td>
+          <td>{{fillup.miles}}</td>
+          <td>${{fillup.pricePerGallon}}</td>
+          <td>{{fillup.vehicle.year}} {{fillup.vehicle.make}} {{fillup.vehicle.model}} {{fillup.vehicle.trim}}</td>
+        </tr>
+        {{else}}
+      <h5>No history to report.</h5>
+      {{/each}}
+    </tbody>
+    </table>
 {{outlet}}

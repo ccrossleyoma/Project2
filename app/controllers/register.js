@@ -2,10 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 	actions: {
-		checkUser(){
 
-		},
-		
 		createUser() {
 			var uName = this.get('username');
 			var pass = this.get('password');
@@ -23,16 +20,16 @@ export default Ember.Controller.extend({
 
 			//Go ahead and create new user account
 			else {
-				var newUser = this.store.createRecord('user',{
+				var user = this.store.createRecord('user',{
 					username: uName,
 					password: pass,
 				});
 
-				newUser.save();
+				user.save();
 
 				console.log('new user registered');
-				alert(name + ", you have been registered!");
-				this.transitionTo('home');
+				alert(uName + ", you have been registered!");
+				this.transitionToRoute('home');
 			}
 		}
 	}

@@ -42,9 +42,18 @@ export default Ember.Route.extend({
 			}
 		}
 		else if(previoustrans){
-			console.log('Redirecting back to original request: /'+previoustrans.targetName);
-			t.set('currentTransition', null);
-			previoustrans.retry();
+			if(transition.targetname === 'register'){
+				t.set('currentTransition', transition);
+				transition.abort();
+				console.log('User is authenicated and is requesting registration page, redirecting');
+				t.transitionTo('home');
+				/*transitionToRoute('about');*/
+			}
+			else{
+				console.log('Redirecting back to original request: /'+previoustrans.targetName);
+				t.set('currentTransition', null);
+				previoustrans.retry();
+			}
 		}
 	},
 	setupController: function(controller){

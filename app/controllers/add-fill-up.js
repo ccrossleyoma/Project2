@@ -43,14 +43,15 @@ export default Ember.Controller.extend({
 					date: fillUpDate,
 					miles: distance,
 					gallons: volume,
-					pricePerGallon: price
+					pricePerGallon: price,
+					vehicle: car
 				});
 
 				newFillUp.save();
 
 				console.log('new fill-up added');
 				alert("Success, new fill-up added!");
-				this.transitionTo('compare');
+				this.transitionToRoute('compare');
 			}
 		}
 	}

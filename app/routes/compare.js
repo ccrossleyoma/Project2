@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function(){
-			var allFillups = this.store.all('fillup');
+			var allFillups = this.store.peekAll('fillup');
 			var count = allFillups.get('length');
 			return allFillups.objectAt(count-1);
     },

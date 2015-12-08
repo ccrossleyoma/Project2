@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
                 'username': username,
                 'password': password};
             var controllerObj = this;
+
             Ember.$.post('../api/session/', data, function(response){
                 if(response.isauthenticated){
                     //success
@@ -27,8 +28,8 @@ export default Ember.Controller.extend({
                     //errors
                     console.log('Login POST Request to ../api/session/ was successful.');
                     controllerObj.set('errorMsg', response.message);
-                }
-            });
+                    }
+                });
         },
         logout: function(){
             var remember = this.get('remember');
@@ -42,7 +43,6 @@ export default Ember.Controller.extend({
                 controllerObj.set('userid', '');
                 if(!remember){
                     //save to username and pass to local storage
-
                 }
                 controllerObj.transitionToRoute('auth');
             });
@@ -50,39 +50,3 @@ export default Ember.Controller.extend({
         },
     }
 });
-
-/*import Ember from 'ember';
-
-export default Ember.Controller.extend({
-	username: '',
-	loggedIn: false,
-	errorMsg: '',
-	remember: false,
-	actions: {
-		login: function(){
-			//Check authentication here
-			console.log('login');
-			var user = this.get('username');
-			if(user!=="Colby"){
-				this.set('errorMsg', 'Login failed!');
-			}
-			else{
-				this.set('loggedIn', true);
-				this.transitionTo('home');
-			}
-
-		},
-		logout: function(){
-			//Log user out of application
-			console.log('logout');
-			var user = this.get('username');
-			if (user === "Colby"){
-				this.set('loggedIn', false);
-				this.transitionTo('auth');
-			}
-			else{
-				this.set('errorMsg', 'Logout failed!');
-			}
-		}
-	}
-});*/

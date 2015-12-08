@@ -8,6 +8,7 @@
         <th>Miles</th>
         <th>Price per Gallon</th>
         <th>Vehicle</th>
+        <th>Remove Entry?</th>
       </tr>
     </thead>
     <tbody>
@@ -18,6 +19,7 @@
           <td>{{fillup.miles}}mi</td>
           <td>${{fillup.pricePerGallon}}</td>
           <td>{{fillup.vehicle.year}} {{fillup.vehicle.make}} {{fillup.vehicle.model}} {{fillup.vehicle.trim}}</td>
+          <td>{{!-- {{#link-to 'fillup' tagName="li2"}}<a href="/add-vehicle">Remove</a>{{/link-to}} --}}</td>
         </tr>
         {{else}}
   		<h4>No history to report.</h4>

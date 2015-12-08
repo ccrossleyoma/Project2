@@ -8,14 +8,11 @@ export default Ember.Controller.extend({
     }.property(),
 */
 		addFillUp() {
+			var car = this.get('vehicle');
 			var fillUpDate = this.get('date');
 			var distance = this.get('miles');
 			var volume = this.get('gallons');
-			var price = this.get('pricePerGallon');
-			var car = this.get('vehicle');
-			/*var uName = 1;*/
-			/*var t = this;*/
-			/*var auth = t.controllerFor('auth');*/
+			var price = this.get('pricepergallon');
 
 			//Make sure all fields are filled, otherwise complain to the user
 			if((fillUpDate === undefined) || (distance === undefined) || (volume === undefined) || (price === undefined) || (car === undefined) /*|| (uName === undefined)*/) {
@@ -24,7 +21,7 @@ export default Ember.Controller.extend({
 
 			//Miles traveled is equal to or less than 0
 			else if(distance <= 0){
-				alert("Gallons of fuel must be greater than 0!");
+				alert("Miles on tank must be greater than 0!");
 			}
 
 			//Volume of fuel is equal to or less than 0
@@ -39,15 +36,15 @@ export default Ember.Controller.extend({
 
 			//Go ahead and create new record of fill up
 			else {
-				var newFillUp = this.store.createRecord('fillup',{
+				var fillup = this.store.createRecord('fillup',{
 					date: fillUpDate,
 					miles: distance,
 					gallons: volume,
-					pricePerGallon: price,
+					pricepergallon: price,
 					vehicle: car
 				});
 
-				newFillUp.save();
+				fillup.save();
 
 				console.log('new fill-up added');
 				alert("Success, new fill-up added!");

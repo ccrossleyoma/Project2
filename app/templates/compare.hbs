@@ -2,25 +2,28 @@
 <table class="table table-striped">
     <thead>
       <tr>
-      <th>Your Last Price per Gallon</th>
-      <th>Your Last Miles on Tank</th>
-      <th>Your last MPG</th>
-      <th>Your Average MPG</th>
-      <th>Community Average MPG</th>
-      <th>Your Best MPG</th>
-      <th>Community Best MPG</th>
+        <th>Vehicle</th>
+        <th>Last Price per Gallon</th>
+        <th>Last Miles on Tank</th>
+        <th>Last MPG</th>
+        <th>Average MPG</th>
+        <th>Best MPG</th>
       </tr>
-      </thead>
-      <tbody>
+    </thead>
+    <tbody>
+      {{#each vehicle in vehicle}}
         <tr>
-          <td>${{allFillups.pricePerGallon}}</td>
+          <td>{{allFillups.vehicle.year}} {{allFillups.vehicle.make}} {{allFillups.vehicle.model}} {{allFillups.vehicle.trim}}</td>
+          <td>{{allFillups.pricePerGallon}}</td>
           <td>{{allFillups.miles}}mi</td>
-          <td>last MPG here</td>
-          <td>average MPG here</td>
-          <td>community average mpg here</td>
-          <td>best mpg</td>
-          <td>community best mpg here</td>
+          <td>mi</td>
+          <td>$</td>
+          <td>{{!-- {{#link-to 'fillup' tagName="li2"}}<a href="/add-vehicle">Remove</a>{{/link-to}} --}}</td>
         </tr>
+        {{else}}
+      <h4>You haven't added any vehicles yet.</h4>
+      {{/each}}
     </tbody>
-    </table>
+</table>
 {{outlet}}
+

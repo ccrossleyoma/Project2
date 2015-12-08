@@ -2,21 +2,12 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function(){
-			var allFillups = this.store.peekAll('fillup');
-			var count = allFillups.get('length');
-			return allFillups.objectAt(count-1);
+			return this.store.findAll('vehicle')
     },
-    /*mpg: function(){
-			var allFillups = this.store.all('fillup');
-			var count = allFillups.get('length');
-			var lastFillup = allFillups.objectAt(count-1);
-			var lastMiles = lastFillup.miles;
-			var lastGallons = lastFillup.gallons;
-			var mpg = (lastMiles / lastGallons);
-			return mpg;
-    },
-    maxMPG: function(){
-    		var allFillups = this.store.all('fillup');
+
+    
+/*    maxMPG: function(){
+    		var allFillups = this.store.peekAll('fillup');
 			var count = allFillups.get('length');
 			var lastFillup = allFillups.objectAt(count-1);
 			var lastMiles = lastFillup.miles;
@@ -25,6 +16,6 @@ export default Ember.Route.extend({
     },*/
     
 	setupController: function(controller, model){
-		controller.set('allFillups', model);
+		controller.set('vehicle', model);
 	}
 });

@@ -5,7 +5,7 @@ export default DS.Model.extend({
   make: DS.attr('string'),
   model: DS.attr('string'),
   trim: DS.attr('string'),
-  user: DS.belongsTo('user', {async: true}),
+  /*user: DS.belongsTo('user', {async: true}),*/
   fillups: DS.hasMany('fillup')
 });
 

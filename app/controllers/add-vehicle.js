@@ -25,14 +25,14 @@ export default Ember.Controller.extend({
 
 			//Go ahead and create new record of vehicle
 			else {
-				var car = this.store.createRecord('vehicle',{
+				var vehicle = this.store.createRecord('vehicle',{
 					year: vehicleYear,
 					make: brand,
 					model: modelName,
-					trim: trimLevel
+					trim: trimLevel,
 				});
 
-				car.save();
+				vehicle.save();
 
 				console.log('new vehicle added');
 				alert("Success, new vehicle was added!");

@@ -3,23 +3,19 @@
 <table class="table table-striped">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Date</th>
         <th>Miles</th>
         <th>Price per Gallon</th>
         <th>Vehicle</th>
-        <th>Remove Entry?</th>
       </tr>
     </thead>
     <tbody>
       {{#each fillup in fillup}}
         <tr>
-          <td>{{fillup.id}}</td>
           <td>{{fillup.date}}</td>
           <td>{{fillup.miles}}mi</td>
-          <td>${{fillup.pricePerGallon}}</td>
+          <td>${{fillup.pricepergallon}}</td>
           <td>{{fillup.vehicle.year}} {{fillup.vehicle.make}} {{fillup.vehicle.model}} {{fillup.vehicle.trim}}</td>
-          <td>{{!-- {{#link-to 'fillup' tagName="li2"}}<a href="/add-vehicle">Remove</a>{{/link-to}} --}}</td>
         </tr>
         {{else}}
   		<h4>No history to report.</h4>

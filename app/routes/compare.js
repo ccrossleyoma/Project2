@@ -2,8 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model: function(){
-			return this.store.findAll('vehicle')
+			return this.store.findAll('vehicle');
     },
+    
+	setupController: function(controller, model){
+		controller.set('vehicle', model);
+	}
+});
 
     
 /*    maxMPG: function(){
@@ -14,8 +19,3 @@ export default Ember.Route.extend({
 			var lastGallons = lastFillup.gallons;
 			var mpg = (lastMiles / lastGallons);
     },*/
-    
-	setupController: function(controller, model){
-		controller.set('vehicle', model);
-	}
-});

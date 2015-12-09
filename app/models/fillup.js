@@ -5,6 +5,5 @@ export default DS.Model.extend({
   miles: DS.attr('number'),
   gallons: DS.attr('number'),
   pricepergallon: DS.attr('number'),
-  /*user: DS.belongsTo('user', {async: true}),*/
   vehicle: DS.belongsTo('vehicle', {async: true})
 });

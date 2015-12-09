@@ -1,19 +1,14 @@
 <h2>Full tank?</h2>
 <p>Record your results below and click submit.</p>
 <form {{action 'addFillUp' identification on='submit'}}>
+			{{#each model.errors.messages as |message|}}
+				<div class="error">
+				{{message}}
+				</div>
+			{{/each}}
 			<div class="form-group has-error">
 				{{input class="form-control" value=vehicle placeholder="Vehicle"}}
 			</div>
-			{{!-- <div>
-			{{view Ember.Select 
-			content=controller.vehiclesLookup 
-			selection=model.vehicle
-			optionValuePath="content.id" 
-			optionLabelPath="content.title" 
-			prompt="Choose vehicle" 
-			class="form-control" 
-			id="input-vehicle"}}
-			</div><div></div> --}}
 			<div class="form-group has-error">
 				{{input class="form-control" value=date placeholder="Date" type="date"}}
 			</div>

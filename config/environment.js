@@ -12,7 +12,7 @@ module.exports = function(environment) {
     'font-src': "'self'",
     'connect-src': "'self' 'localhost:4200'",
     'img-src': "'self'",
-    'style-src': "'self' 'localhost:4200'",
+    'style-src': "'self' 'localhost:4200' 'unsafe-inline'",
     'media-src': "'self' 'localhost:4200'"
     },
 
@@ -35,7 +35,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.API_HOST = 'iasc8080-06.ist.unomaha.edu';
+    ENV.APP.API_HOST = 'http://iasc8080-06.ist.unomaha.edu';
   }
 
   if (environment === 'test') {
